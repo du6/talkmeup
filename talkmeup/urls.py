@@ -31,7 +31,8 @@ urlpatterns = [
     url(r'^', include('userprofile.urls')),
     url(r'^coach/', include('coach.urls')),
     url(r'^signup$', userprofile_views.signup, name='signup'),
-    url(r'^uploads/', include('uploads.urls'))
+    url(r'^uploads/', include('uploads.urls')),
+    url(r'^contact/', userprofile_views.contact, name='contact'),
 ]
 
 if settings.DEBUG is True:

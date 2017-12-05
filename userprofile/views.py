@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from rest_framework import permissions
 from rest_framework import generics
 
-from userprofile.forms import SignUpForm
+from userprofile.forms import ContactedUserForm, SignUpForm
 from userprofile.models import UserProfile
 from userprofile.permissions import IsOwner
 from userprofile.serializers import UserProfileSerializer
@@ -53,3 +53,11 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'userprofile/signup.html', {'form': form})
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactedUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return redirect('home')

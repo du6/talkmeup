@@ -12,6 +12,16 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2', )
         
 
+class CompanySignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Required. Input a valid email address.')
+    companyName = forms.CharField(max_length=100)
+    message = forms.CharField(max_length=500)
+    
+    class Meta:
+        model = User
+        fields = ('companyName', 'username', 'email', 'password1', 'password2', 'message')
+
+
 class ContactedUserForm(forms.ModelForm):
     class Meta:
         model = ContactedUserProfile

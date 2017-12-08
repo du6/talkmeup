@@ -28,3 +28,15 @@ class ContactedUserProfile(models.Model):
     class Meta:
         ordering = ('-createdOn',)
         
+
+class CompanyUserProfile(models.Model):
+    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    companyName = models.CharField(max_length=100, blank=True, default='')
+    message = models.CharField(max_length=100, blank=True, default='')
+    createdOn = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.companyName
+
+    class Meta:
+        ordering = ('-createdOn',)

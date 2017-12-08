@@ -9,8 +9,8 @@ from django.template.loader import render_to_string
 from rest_framework import permissions
 from rest_framework import generics
 
-from userprofile.forms import ContactedUserForm, SignUpForm
-from userprofile.models import UserProfile
+from userprofile.forms import ContactedUserForm, SignUpForm, CompanySignUpForm
+from userprofile.models import UserProfile, CompanyUserProfile
 from userprofile.permissions import IsOwner
 from userprofile.serializers import UserProfileSerializer
 from userprofile.tokens import account_activation_token
@@ -111,11 +111,31 @@ def signup(request):
     return render(request, 'userprofile/signup.html', {'form': form})
 
 
+def company_signup(request):
+    if request.method == 'POST':
+        form = CompanySignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            user.save()
+            companyName = form.cleaned_data.get('companyName')
+            message = form.cleaned_data.get('message')
+            CompanyUserProfile.objects.create(owner=user, companyName=companyName, message=message)
+            user.companyuserprofile.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = CompanySignUpForm()
+    return render(request, 'userprofile/company-signup.html', {'form': form})
+
+
 def save_profile_for_social_user(backend, user, response, *args, **kwargs):
     if not UserProfile.objects.filter(owner=user):
         UserProfile.objects.create(owner=user)
         user.userprofile.save()
-    
+
 
 def contact(request):
     if request.method == 'POST':

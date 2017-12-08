@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^', include('userprofile.urls')),
     url(r'^coach/', include('coach.urls')),
     url(r'^signup$', userprofile_views.signup, name='signup'),
+    url(r'^company-signup$', userprofile_views.company_signup, name='company-signup'),
     url(r'^uploads/', include('uploads.urls')),
     url(r'^contact/', userprofile_views.contact, name='contact'),
 ]

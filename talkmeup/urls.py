@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^signup$', userprofile_views.signup, name='signup'),
     url(r'^company-contact$', userprofile_views.company_contact, name='company-contact'),
     url(r'^personal-contact/', userprofile_views.personal_contact, name='personal-contact'),
+    url(r'^leave-message/', userprofile_views.leave_message, name='leave-message'),
     url(r'^uploads/', include('uploads.urls')),
 ]
 

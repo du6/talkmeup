@@ -145,10 +145,11 @@
         <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
           <br>
             <p class="text-center lead" style="font-weight:700;color:#34495c">Schedule a free Pilot for your company!</p>
-             <form method="POST" action="">
+            <form method="POST" action="{% url 'company-contact' %}">
+              {% csrf_token %}
               <div class="form-group">
                 <center>
-            <input type="email" name='email' class="form-control" placeholder="Your Company Email" id="email" style="width:70%;" required>
+            <input type="email" name="email" class="form-control" placeholder="Your Company Email" id="email" style="width:70%;" required>
                 </center>
               </div>
               <center>

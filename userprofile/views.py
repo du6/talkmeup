@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from rest_framework import permissions
 from rest_framework import generics
 
-from userprofile.forms import ContactedUserForm, SignUpForm, CompanySignUpForm, PersonalSignUpForm
+from userprofile.forms import LeavedMessageForm, SignUpForm, CompanySignUpForm, PersonalSignUpForm
 from userprofile.models import UserProfile, CompanyUserProfile, PersonalUserProfile
 from userprofile.permissions import IsOwner
 from userprofile.serializers import UserProfileSerializer
@@ -81,9 +81,9 @@ def save_profile_for_social_user(backend, user, response, *args, **kwargs):
         user.userprofile.save()
 
 
-def contact(request):
+def leave_message(request):
     if request.method == 'POST':
-        form = ContactedUserForm(request.POST)
+        form = LeavedMessageForm(request.POST)
         if form.is_valid():
             form.save()
     return redirect('home')

@@ -38,3 +38,14 @@ class CompanyUserProfile(models.Model):
 
     class Meta:
         ordering = ('-createdOn',)
+
+
+class PersonalUserProfile(models.Model):
+    email = models.CharField(max_length=100, blank=True, default='')
+    createdOn = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        ordering = ('-createdOn',)

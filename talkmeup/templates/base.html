@@ -60,7 +60,7 @@
             </li>
           {% endif %}
           <li><a href="#" data-toggle="modal" data-target="#contact">Contact us</a></li>
-          <li><a href=""></a></li>
+          <li><a href="#" data-toggle="modal" data-target="#share">Share</a></li>
       </ul>
       <!-- <div id="trydemo"></div> -->
       <a href="#" id="corner-ad" data-toggle="modal" data-target="#demo" class="xx">
@@ -98,7 +98,7 @@
             </center></div>
 
               <center>
-              <button type="submit" class="btn btn-primary" style="background-color: #34495c;border-color: #34495c;box-shadow: 0px 1px 2px 1px #362d2db3;">
+                <button type="submit" class="btn btn-primary" style="background-color: #34495c;border-color: #34495c;box-shadow: 0px 1px 2px 1px #362d2db3;">
                 <span style="font-weight:700;color:#fff;font-size: 20px;">Send</span>
               </button>
               </center>
@@ -109,6 +109,26 @@
     </div>
   </div>
 
+  <!-- share -->
+  <div class="modal fade" id="share" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
+          <button type="button" class="close" data-dismiss="modal" style="color: #f00;font-weight: bold;margin-top: -16px;font-size: 26px;">&times;</button>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-1">
+                <div class="fb-share-button" data-href="http://talkmeup.co" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkmeup.co%2F&amp;src=sdkpreparse">Share</a></div>
+              </div>
+              <div class="col-sm-1">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <!-- Sign up for our upcoming demo! -->
@@ -123,7 +143,7 @@
               {% csrf_token %}
               <div class="form-group">
                 <center>
-            <input type="email" name='email' class="form-control" id="email" style="width:70%;" placeholder="Your Email" required>
+                  <input type="email" name='email' class="form-control" id="email" style="width:70%;" placeholder="Your Email" required>
                 </center>
               </div>
               <center>

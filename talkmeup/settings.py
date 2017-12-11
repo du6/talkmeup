@@ -160,7 +160,7 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',

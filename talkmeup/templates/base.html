@@ -233,64 +233,14 @@
               $('.xx').attr('data-target','#new');
               $('#ff').attr('src','{% static 'icon/pilot.png' %}');
               $('.zz').attr('data-target','#new');  
-            }else{
+            } else{
               $('#yy').attr('src','{% static 'icon/demo.png' %}');
               $('.xx').attr('data-target','#demo');
               $('#ff').attr('src','{% static 'icon/demo.png' %}');
               $('.zz').attr('data-target','#demo');
             }
         });
-
-
-
-        var delay = false;
-
-        $(document).on('mousewheel DOMMouseScroll', function(event) {
-          event.preventDefault();
-          if(delay) return;
-
-          delay = true;
-          setTimeout(function(){delay = false},200)
-
-          var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-          
-
-          var a= $("#ButtonForScroll a")
-          if(wd < 0) {
-            for(var i = 0 ; i < a.length ; i++) {
-              var t = a[i].getClientRects()[0].top;
-              if(t >= 40) break;
-            }
-          }
-          else {
-            for(var i = a.length-1 ; i >= 1 ; i--) {
-              var t = a[i].getClientRects()[0].top;
-              if(t < -20) break;
-            }
-          }
-          
-          if(i >= 0 && i < a.length) {
-            $('html,body').animate({
-              scrollTop: a[i].offsetTop
-            });
-          }
-        });
-        console.clear();
-
-
-      // Add smooth scrolling on all links inside the navbar
-      $("#ButtonForScroll a").on('click', function(event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 500, function(){
-            // window.location.hash = "?";
-          });
-        } 
-      });  
-          }
+      }
 
 
     </script>

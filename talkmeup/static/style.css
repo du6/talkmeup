@@ -18,11 +18,10 @@ body {
 
 .CompanyTrain {
   background-color: white;
-  min-height: 730px;
+  min-height: 780px;
 }
 .testmonial {
-  background-color: yellow;
-  min-height: 700px;
+  min-height: 750px;
 }
 
 #trydemo { 

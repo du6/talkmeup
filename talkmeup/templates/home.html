@@ -1,201 +1,202 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="introPage">
-    <br><br><br><br><br><br>
-  <img src="../static/TalkMeUpLogo.png" style="display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height:300px">
-<br><br>
-  <h3>On-demand, effective and personalized coaching on communication skills <br> at 1/100th the cost of the world’s best professional coaches. </h3>
-  
-<br><br>
-    
-<button class="requestDemoButton" style="vertical-align:middle"><span>Request a Demo </span></button>
-</div>
 
-<div class="demoPage">
-    <div style="text-align: center;">
-        <br><br>
-        <h2>What is TalkMeUp ?</h2>
-        <br>
-        <p>
-        TalkMeUp brings you the collective wisdom of world’s best coaches. <br>
-        Using AI, we make the personalized coaching experience available 24/7, <br>
-        whenever you need instant feedback on your professional communication. <br>
-        Presentation, job interview, public speaking, client meeting -- we prepare you to succeed. </p>
-        <h4>TalkMeUp Overview</h4>
-    <iframe id="video" type="text/html" width="50%" height=400px marginwidth="100" src="http://www.youtube.com/embed/WsZAx20Ui_A?hd=1&rel=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
-<div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:5px 5px;text-align: justify;">
-    <p></p>
+<div class="LandingPage">
+<section id="header">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 home_image">
+      {% load static %}
+      <center>
+      <img src="{% static 'icon/logo-dark.png' %}" class="img-responsive" width="60%" height="auto" style="margin-top:30px">
+      </center>
+      </div>
   </div>
-</div>
+  <br>
+  <br>
 
-<div class="personalPage">
-  <div class="w3-row-padding">
-    <div class="w3-third">
-        <div class="card">
-          <img src="../static/PersonalImg/presentation1.png" style="display: block; margin: 0 auto; height:300px">
-          <h1>Presentation</h1>
-          <p class="title">Presentation</p>
-          <p>
-              "Today, presentation is required at almost every level <br>
-              in every business. The ability to present information <br>
-              in a way that is easy for the audience to understand <br>
-              now a key soft skill." </p>
-            <br>
-         <p><button>Express Interest</button></p>
-        </div>
-    </div>
-    
-    <div class="w3-third">
-        <div class="card">
-          <img src="../static/PersonalImg/jobInterview.png" style="display: block; margin: 0 auto; height:300px">
-          <h1>Job Interview</h1>
-          <p class="title">Job Interview</p>
-          <p>
-              "Interviewing is usually a very important part of the <br>
-              process of finding a job. It's an important connection <br>
-              between the job candidate and the people making the <br>
-              hiring decision."</p>
-            <br>
-         <p><button>Express Interest</button></p>
-        </div>
-    </div>
-    
-    <div class="w3-third">
-        <div class="card">
-          <img src="../static/PersonalImg/actForBusiness.png" style="display: block; margin: 0 auto; height:300px">
-          <h1>Leadership</h1>
-          <p class="title">Leadership</p>
-          <p>
-              "The supreme quality for leadership is unquestionably <br>
-              integrity. Without it, no real success is possible, no <br>
-              matter whether it is on a football field or in an office."<br>
-              – Dwight D. Eisenhower</p>
-            <br>
-         <p><button>Express Interest</button></p>
-        </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <video loop autoplay controls="true" controlsList="nodownload" width="100%" height="100%" src="{% static 'video/promo.mp4' %}" type="video/mp4"></video>
     </div>
   </div>
-    
+  <br>
+  <br>
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h3 style="font-size: 21px; color:#34495c;" class="text-center">On-demand, effective and personalized coaching on communication skills <br> at 1/100th the cost of the world's best professional coaches.</h3>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</section>
+</div>
+<br>
+<br>
+<br>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+<div class="WhyTalkMeUp">
+  <section id="why-talkmeup">
+    <div class="col-sm-10 col-sm-offset-1">
+	    <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
+        Why TalkMeUp
+      </h1>
+      <br>
+      <br>
+      <center>
+        <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Accessible</h2>
+            <img src="{% static 'icon/accessible.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 20px;">Your Just-in-time coach</p>
+          </div>
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      <input type="checkbox" checked="checked"> Remember me
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Effective</h2>
+            <img src="{% static 'icon/effective.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 20px;">Personalized coaching to drive progress</p>
+          </div>
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight:700; margin-bottom:25px; color: #34495c">Affordable</h2>
+            <img src="{% static 'icon/affordablelight.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 20px;">Stating at <span style="color:#EEC15E">$0</span> a month</p>
+          </div>
+    </center>
+        </div>
+</section>
+</div>
+<br>
+
+<div class="PersonalTrain">
+  <section id="presentation-interview">
+    <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
+        What Do We Offer 
+      </h1>
+      <br>
+      <br>
+      <br>
+          <center>
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Presentation</h2>
+            <img src="{% static 'icon/presentationdark.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 20px;">A good presentation satisfies your audience and helps you gain buy-in.</p>
+          </div>
+
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Job Interview</h2>
+            <img src="{% static 'icon/interviewdark.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 20px;">Delivering your value properly gets you in the door.</p>
+          </div>
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight:700; margin-bottom:25px; color: #34495c">Leadership</h2>
+            <img src="{% static 'icon/leadership.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 20px;">Show your team that you are the one to trust and follow.</p>
+          </div>
+          </center>
+        </div>
+</section>
+</div>
+<br>
+<br>
+<br>
+
+<div class="CompanyTrain" id="pilot">
+  <section id="talkmeup-about">
+      <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
+        What Do We Offer 
+      </h1>
+      <br>
+      <br>
+      <br>    
+      </div>
+      <div class="col-sm-10 col-sm-offset-2" style="margin-top: 0px">
+          <center>
+          <div class="col-sm-4">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Employee</h2>
+            <img src="{% static 'icon/employeelight.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 20px;">TalkMeUp equips every employee with a smart coach that is always available on his/her mobile device.</p>
+          </div>
+
+          <div class="col-sm-4 col-sm-offset-2">
+            <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Company</h2>
+            <img src="{% static 'icon/company.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 20px;">TalkMeUp can be easily tailored for enterprises. It provides analytical support to make employee development adaptable, measurable and manageable.</p>
+          </div>
+          </center>
+        </div>
+</section>
+<br>
+<br>
+<br>
+</div>
+
+
+<section id="testmonial">
+  <div class="row" style="background-color:#ecddb9;margin-right: auto;margin-left: auto;margin-top: 100px;">
+    <br>
+    <br>
+    <div class="col-md-3" style="visibility:hidden">
+      <center>
+        <br><br><br><br>
+        <a data-slide="prev" href="#quote-carousel" style="color:grey;font-size:30px;"><i class="fa fa-chevron-left"></i></a>
+      </center>
+    </div>
+    <div class="col-md-6">
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <div class="carousel-inner" style="font-size: 20px;">
+          <div class="item active">
+            <center>
+              <p>“We piloted TalkMeUp in my Management Presentations class, improving class participation by 5X. Further, students who used TalkMeUp are maintaining their presentation skills at a higher level after the course when compared with those who relied on less robust forms of feedback."</p>
+              <small>--Prof. Ron Placone</small>
+              <br>
+              <br>
+              </center>
+              </div>
+              <div class="carousel-inner" style="font-size: 16px;">         
+              <center>
+              <p>Faculty Lead for the Accelerate Leadership Center at the Tepper School of Business, Carnegie Mellon University</p>
+            </center>
+            </div>
+          </div>
+          <br>
+          <br>
+        </div>
       </div>
     </div>
-  </form>
-</div>
-    
-</div>
-
-<div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:5px 5px;text-align: justify;">
-    <p></p>
-  </div>
-</div>
-
-
-<div class="companyPage">
-  <div class="w3-row-padding">
-    <div class="w3-half">
-        <div class="companyCard">
-          <img src="../static/CompanyImg/data.png" style="display: block; margin: 0 auto; height:300px">
-          <h1>A Smart Coach</h1>
-          <br>
-          <p class="title">TalkMeUp is easy to be tailored for enterprises. </p>
-          <br>
-          <p>TalkMeUp is easy to be tailored for enterprises, <br>
-              and equips every employee with a smart coach in his/her pocket. <br>
-              Analytical support to make employee development adaptable, <br>
-              measurable and manageable.</p>
-         <br><br>
-         <p><button>Express Interest</button></p>
-        </div>
+    <div class="col-md-3" style="visibility:hidden">
+      <center>
+        <br><br><br><br>
+        <a data-slide="next" href="#quote-carousel" style="color:grey;font-size:30px;"><i class="fa fa-chevron-right"></i></a>
+        </center>
     </div>
-    
-    <div class="w3-half">
-        <div class="companyCard">
-          <img src="../static/CompanyImg/paper.png" style="display: block; margin: 0 auto; height:300px">
-          <h1>Enterprises</h1>
-          <br>
-          <p class="title">TalkMeUp analytical supports your employee development. </p>
-          <br>
-          <p>TalkMeUp is easy to be tailored for enterprises, <br>
-              and equips every employee with a smart coach in his/her pocket. <br>
-              Analytical support to make employee development adaptable, <br>
-              measurable and manageable.</p>
-         <br><br>
-         <p><button>Express Interest</button></p>
-        </div>
-    </div>
-  </div>  
-</div>
-
-
-<div style="position:relative;">
-  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
   </div>
-</div>
-
-<div class="slideshow-container">
-
-<div class="mySlides w3-animate-opacity">
-  <div class="numbertext">1 / 3</div>
-  <img src="../static/%2520UserTestimonials/userBG1.jpg" style="width:100%; opacity: 0.3;">
-  <div class="top-left">85% of your financial success is due to skills in “human engineering,” <br>
-      your personality and ability to communicate, negotiate, and lead. <br>
-      Shockingly, only 15% is due to technical knowledge. <br><br><br><br></div>
-  <div class="right">---- “Intelligence Is Overrated: What You Really Need To Succeed-- Forbes”</div>
-</div>
-
-<div class="mySlides w3-animate-opacity">
-  <div class="numbertext">2 / 3</div>
-  <img src="../static/%2520UserTestimonials/userBG2.jpg" style="width:100%; opacity: 0.3;">
-  <div class="top-left">85% of your financial success is due to skills in “human engineering,” <br>
-      your personality and ability to communicate, negotiate, and lead. <br>
-      Shockingly, only 15% is due to technical knowledge. <br><br><br><br></div>
-  <div class="right">---- “Intelligence Is Overrated: What You Really Need To Succeed-- Forbes”</div>
-</div>
-
-<div class="mySlides w3-animate-opacity">
-  <div class="numbertext">3 / 3</div>
-  <img src="../static/%2520UserTestimonials/userBG3.jpg" style="width:100%; opacity: 0.3;">
-  <div class="top-left">85% of your financial success is due to skills in “human engineering,” <br>
-      your personality and ability to communicate, negotiate, and lead. <br>
-      Shockingly, only 15% is due to technical knowledge. <br><br><br><br></div>
-  <div class="right">---- “Intelligence Is Overrated: What You Really Need To Succeed-- Forbes”</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
+</section>
 
 
-<div class="navbar">
-  <a class="navbar-brand" href="{% url 'home' %}">TalkMeUp</a>
-  <a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'">Try Demo</a>
-</div>
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}

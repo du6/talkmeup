@@ -9,8 +9,8 @@ from django.template.loader import render_to_string
 from rest_framework import permissions
 from rest_framework import generics
 
-from userprofile.forms import SignUpForm
-from userprofile.models import UserProfile
+from userprofile.forms import LeavedMessageForm, SignUpForm, CompanySignUpForm, PersonalSignUpForm
+from userprofile.models import UserProfile, CompanyUserProfile, PersonalUserProfile
 from userprofile.permissions import IsOwner
 from userprofile.serializers import UserProfileSerializer
 from userprofile.tokens import account_activation_token
@@ -53,3 +53,37 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'userprofile/signup.html', {'form': form})
+
+
+def company_contact(request):
+    if request.method == 'POST':
+        form = CompanySignUpForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            if not CompanyUserProfile.objects.filter(email=email):
+                form.save()
+    return redirect('home')
+
+
+def personal_contact(request):
+    if request.method == 'POST':
+        form = PersonalSignUpForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            if not PersonalUserProfile.objects.filter(email=email):
+                form.save()
+    return redirect('home')
+
+
+def save_profile_for_social_user(backend, user, response, *args, **kwargs):
+    if not UserProfile.objects.filter(owner=user):
+        UserProfile.objects.create(owner=user)
+        user.userprofile.save()
+
+
+def leave_message(request):
+    if request.method == 'POST':
+        form = LeavedMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return redirect('home')

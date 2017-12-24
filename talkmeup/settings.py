@@ -132,6 +132,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.weibo.WeiboOAuth2',
 )
 
 # Internationalization
@@ -159,7 +160,20 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'userprofile.views.save_profile_for_social_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
 
 SOCIAL_AUTH_TWITTER_KEY = 'q4BKPA0Yv9TE6TOjCK6vb2OYt'
 SOCIAL_AUTH_TWITTER_SECRET = 'tRNco24mdjahQBsIaZ096tGoTS4qIOAlcBFj9IT4J8wRHfE6Gu'
@@ -173,3 +187,5 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'JuMK6hN1EzimsKNVbIixNu3q'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '86y1th7d118kgm'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'JWNlg0liuk3mQ7aQ'
 
+SOCIAL_AUTH_WEIBO_KEY = '22021550'
+SOCIAL_AUTH_WEIBO_SECRET = '22a7031fb1815a158a24d0793bf04ba7'

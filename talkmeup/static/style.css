@@ -4,8 +4,28 @@ body {
   background-color: #F2F3F4;
   position: relative; 
 }
+.LandingPage {
+  min-height: 750px;
+}
 
- #trydemo{ 
+.WhyTalkMeUp {
+  background-color: white;
+  min-height: 700px;
+}
+.PersonalTrain {
+  min-height: 700px;
+}
+
+.CompanyTrain {
+  background-color: white;
+  min-height: 730px;
+}
+.testmonial {
+  background-color: yellow;
+  min-height: 700px;
+}
+
+#trydemo { 
  	width: 0; 
  	height: 0; 
  	border-top: 100px solid #EEC153; 
@@ -18,10 +38,8 @@ body {
 
  	 }
 
-
-
 .nav-color{
-	  background-color: #F2F3F4;
+    background-color: white;
 	  border-bottom: 2px solid #34495c;
 }
 

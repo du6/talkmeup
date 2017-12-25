@@ -31,9 +31,10 @@ urlpatterns = [
     url(r'^', include('userprofile.urls')),
     url(r'^coach/', include('coach.urls')),
     url(r'^signup$', userprofile_views.signup, name='signup'),
-    url(r'^company-signup$', userprofile_views.company_signup, name='company-signup'),
+    url(r'^company-contact$', userprofile_views.company_contact, name='company-contact'),
+    url(r'^personal-contact/', userprofile_views.personal_contact, name='personal-contact'),
+    url(r'^leave-message/', userprofile_views.leave_message, name='leave-message'),
     url(r'^uploads/', include('uploads.urls')),
-    url(r'^contact/', userprofile_views.contact, name='contact'),
 ]
 
 if settings.DEBUG is True:

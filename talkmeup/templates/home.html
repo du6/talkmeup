@@ -2,36 +2,48 @@
 
 {% block content %}
 
-<div class="container">
+<div class="LandingPage">
 <section id="header">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 home_image">
       {% load static %}
       <center>
-      <img src="{% static 'icon/logo-dark.png' %}" class="img-responsive" width="60%" height="auto" style="margin-top:50px">
+      <img src="{% static 'icon/logo-dark.png' %}" class="img-responsive" width="60%" height="auto" style="margin-top:10px">
       </center>
       </div>
   </div>
   <br>
+  <br>
+
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <video loop autoplay controls="true" controlsList="nodownload" width="100%" height="100%" src="{% static 'video/promo.mp4' %}" type="video/mp4"></video>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_kaglYLpOq0?autoplay=1&loop=1&playlist=_kaglYLpOq0&mute=1"></iframe>
+      </div>
     </div>
+    <div class="col-sm-3"></div>
   </div>
   <br>
+  <br>
+
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-      <h3 style="font-size: 21px; color:#34495c;" class="text-center">On-demand, effective and personalized coaching on communication skills at 1/100th the cost of the world's best professional coaches.</h3>
+      <h3 style="font-size: 21px; color:#34495c;" class="text-center">On-demand, effective and personalized coaching on communication skills <br> at 1/100th the cost of the world's best professional coaches.</h3>
     </div>
     <div class="col-sm-2"></div>
   </div>
 </section>
 </div>
-<div class="container">
+<br>
+<br>
+<br>
+
+<div class="WhyTalkMeUp">
   <section id="why-talkmeup">
     <div class="col-sm-10 col-sm-offset-1">
-	    <h1 class="text-center" style="font-size: 5.6rem;font-weight: 700; color: #34495c; margin-top: 80px;">
+	    <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
         Why TalkMeUp
       </h1>
       <br>
@@ -43,7 +55,7 @@
             <br>
             <br>
             <br>
-            <p style="font-size: 15px;">Your Just-in-time coach</p>
+            <p style="font-size: 20px;">Your Just-in-time coach</p>
           </div>
 
           <div class="col-sm-4">
@@ -52,7 +64,7 @@
             <br>
             <br>
             <br>
-            <p style="font-size: 15px;">Personalized coaching to drive progress</p>
+            <p style="font-size: 20px;">Personalized coaching to drive progress</p>
           </div>
           <div class="col-sm-4">
             <h2 style="font-size: 2.8rem;font-weight:700; margin-bottom:25px; color: #34495c">Affordable</h2>
@@ -60,26 +72,30 @@
             <br>
             <br>
             <br>
-            <p style="font-size: 15px;">Stating at <span style="color:#EEC15E">$0</span> a month</p>
+            <p style="font-size: 20px;">Stating at <span style="color:#EEC15E">$0</span> a month</p>
           </div>
     </center>
-
         </div>
 </section>
 </div>
 <br>
 
-<div class="container">
+<div class="PersonalTrain">
   <section id="presentation-interview">
-    <div class="col-sm-10 col-sm-offset-1" style="margin-top: 100px">
-
+    <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
+        What Do We Offer
+      </h1>
+      <br>
+      <br>
+      <br>
           <center>
           <div class="col-sm-4">
             <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Presentation</h2>
             <img src="{% static 'icon/presentationdark.png' %}" class="img-responsive" style="width: 70%;">
             <br>
             <br>
-            <p style="font-size: 15px;">A good presentation satisfies your audience and helps you gain buy-in.</p>
+            <p style="font-size: 20px;">A good presentation satisfies your audience and helps you gain buy-in.</p>
           </div>
 
           <div class="col-sm-4">
@@ -87,14 +103,14 @@
             <img src="{% static 'icon/interviewdark.png' %}" class="img-responsive" style="width: 70%;">
             <br>
             <br>
-            <p style="font-size: 15px;">Delivering your value properly gets you in the door.</p>
+            <p style="font-size: 20px;">Delivering your value properly gets you in the door.</p>
           </div>
           <div class="col-sm-4">
             <h2 style="font-size: 2.8rem;font-weight:700; margin-bottom:25px; color: #34495c">Leadership</h2>
             <img src="{% static 'icon/leadership.png' %}" class="img-responsive" style="width: 70%;">
             <br>
             <br>
-            <p style="font-size: 15px;">Show your team that you are the one to trust and follow.</p>
+            <p style="font-size: 20px;">Show your team that you are the one to trust and follow.</p>
           </div>
           </center>
         </div>
@@ -104,16 +120,24 @@
 <br>
 <br>
 
-<div class="container" id="pilot">
+<div class="CompanyTrain" id="pilot">
   <section id="talkmeup-about">
-    <div class="col-sm-10 col-sm-offset-2" style="margin-top: 100px">
+      <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 5.6rem;font-weight: 600; color: #34495c; margin-top: 80px;">
+        What Do We Offer
+      </h1>
+      <br>
+      <br>
+      <br>
+      </div>
+      <div class="col-sm-10 col-sm-offset-2" style="margin-top: 0px">
           <center>
           <div class="col-sm-4">
             <h2 style="font-size: 2.8rem;font-weight: 700; margin-bottom:25px; color: #34495c">Employee</h2>
             <img src="{% static 'icon/employeelight.png' %}" class="img-responsive" style="width: 70%;">
             <br>
             <br>
-            <p style="font-size: 15px;">TalkMeUp equips every employee with a smart coach that is always available on his/her mobile device.</p>
+            <p style="font-size: 20px;">TalkMeUp equips every employee with a smart coach that is always available on his/her mobile device.</p>
           </div>
 
           <div class="col-sm-4 col-sm-offset-2">
@@ -121,7 +145,7 @@
             <img src="{% static 'icon/company.png' %}" class="img-responsive" style="width: 70%;">
             <br>
             <br>
-            <p style="font-size: 15px;">TalkMeUp can be easily tailored for enterprises. It provides analytical support to make employee development adaptable, measurable and manageable.</p>
+            <p style="font-size: 20px;">TalkMeUp can be easily tailored for enterprises. It provides analytical support to make employee development adaptable, measurable and manageable.</p>
           </div>
           </center>
         </div>
@@ -129,6 +153,9 @@
 </div>
 <br>
 <br>
+<br>
+<br>
+
 
 <section id="testmonial">
   <div class="row" style="background-color:#ecddb9;margin-right: auto;margin-left: auto;margin-top: 100px;">
@@ -142,13 +169,20 @@
     </div>
     <div class="col-md-6">
       <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-        <div class="carousel-inner" style="font-size: 16px;">
+        <div class="carousel-inner" style="font-size: 20px;">
           <div class="item active">
             <center>
               <p>“We piloted TalkMeUp in my Management Presentations class, improving class participation by 5X. Further, students who used TalkMeUp are maintaining their presentation skills at a higher level after the course when compared with those who relied on less robust forms of feedback."</p>
               <small>--Prof. Ron Placone</small>
+              <br>
+              <br>
+              </center>
+              </div>
+              <div class="carousel-inner" style="font-size: 16px;">
+              <center>
               <p>Faculty Lead for the Accelerate Leadership Center at the Tepper School of Business, Carnegie Mellon University</p>
             </center>
+            </div>
           </div>
           <br>
           <br>

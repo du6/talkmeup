@@ -10,15 +10,16 @@ body {
 
 .WhyTalkMeUp {
   background-color: white;
-  min-height: 700px;
+  min-height: 750px;
 }
+
 .PersonalTrain {
-  min-height: 700px;
+  min-height: 750px;
 }
 
 .CompanyTrain {
   background-color: white;
-  min-height: 780px;
+  min-height: 750px;
 }
 .testmonial {
   background-color: yellow;

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="home">
+    <div class="loader-wrap">
+        <div class="loader">
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+        </div>
+    </div>
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">Ever wondered whether you are charismatich ?</h2>
+            <button class="btn btn-detect" onclick="location.href='about-you.html'">Detect my charisma</button>
+            <div class="form-groupe">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">I hereby confirm that I’m 13 years old or older. And my video content abides by the policy and laws of my country.</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

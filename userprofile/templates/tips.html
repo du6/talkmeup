@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="tips">
+    <div class="loader-wrap">
+        <div class="loader">
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+        </div>
+    </div>
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">
+                <span class="fun-text">TalkMeUp</span> has tips for you<br>
+                based on your performance.
+            </h2>
+            <div class="factors-container">
+                <div class="row text-left">
+                    <div class="col-sm-4">
+                        <h3>Factors B1</h3>
+                        <p>Description </p>
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-sm-4">
+                        <h3>Factors B2</h3>
+                        <p>Description </p>
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row text-left">
+                    <div class="col-sm-4">
+                        <h3>Factors B3</h3>
+                        <p>Description </p>
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="btns">
+                    <button class="btn btn-tips pull-left">
+                        Sign up
+                        <div class="sub-text"><span>For more personalized </span><span> coaching from</span>
+                            <div> TalkMeUp!</div>
+                        </div>
+                    </button>
+                    <button class="btn btn-tips pull-right" onclick="location.href='share.html'">
+                        Share
+                        <div class="sub-text">TalkMeUp CharmTect</div>
+                    </button>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

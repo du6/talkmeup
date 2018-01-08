@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="contact">
+    <div class="loader-wrap">
+        <div class="loader">
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+        </div>
+    </div>
+    <div class="container rect2">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <div class="share-container">
+                <h2>Share CharmTect with Friends!</h2>
+                <h3>Activate smart coach TalkMeUp to boost my charm.</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href=""><i class="icons-facebook"></i></a>
+                        <a href=""><i class="icons-twitter"></i></a>
+                        <a href=""><i class="icons-google"></i></a>
+                        <a href=""><i class="icons-wechat"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="text-center">
+                        <p class="share-copy">Copy URL to share!</p>
+                        <input class="share-url" type="text" value="http://talkmeUp.co/charmtect">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

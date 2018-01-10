@@ -23,6 +23,7 @@ from userprofile import views as userprofile_views
 from uploads import views as upload_views
 
 urlpatterns = [
+    url(r'^demo/', include('demo.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),

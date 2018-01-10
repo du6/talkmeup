@@ -1,0 +1,26 @@
+/* ==|====================
+   VARIABLES
+=========================== */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800');
+
+
+/* Fonts
+---------------------------------------*/ 
+$color_main : #2FA496;  
+$color_secondary : '' ; 
+$color_text_main: '';
+
+/* Colors
+---------------------------------------*/ 
+$font_main : 'Open Sans', sans-serif; 
+$font_titles : '' ; // 
+
+
+/* animation */
+
+ 	$loader-size: 4;
+    $animation-duration: 2s;
+    $animation-speed: 10;
+    $animation-scale: 1.4;
+    $loader-color: #ffffff;
+    $loader-text-color: #ffffff;

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'coach.apps.CoachConfig',
     'userprofile.apps.UserprofileConfig',
     'uploads.apps.UploadsConfig',
+    'demo',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,10 @@ ROOT_URLCONF = 'talkmeup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'talkmeup/templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'talkmeup/templates'),
+            os.path.join(BASE_DIR, 'demo/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +88,10 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "talkmeup/static")]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "talkmeup/static"),
+    os.path.join(BASE_DIR, "demo/static")
+                    ]
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',

@@ -1,0 +1,32 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+<div class="thanks">
+    <div class="loader-wrap">
+        <div class="loader">
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+            <span class="loader-item"></span>
+        </div>
+    </div>
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">
+                <div>Thank you!</div>
+                <div>Stay tuned for more from</div>
+                {% load static %}
+                <div class="talk-me-up">TalkMeUp <img class="logo" src="{% static 'images/logo.png' %}" alt=""></div>
+                <div>Because We Power Up Your Success!</div>
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

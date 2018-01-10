@@ -4,10 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>TalkMeUp -- Soft Skills Training</title>
+    <!-- For Facebook -->
+    <meta property="og:title" content="TalkMeUp -- Succeed through Better Communication" />
+    <meta property="og:image" content="http://talkmeup.co/static/icon/logo.png" />
+    <meta property="og:url" content="http://talkmeup.co/" />
+    <meta property="og:description" content="TalkMeUp is an AI coach that gives you on-demand and personalized coaching on your communication skills at 1/100th the cost of world’s best coaches!" />
+
+
+    <title>TalkMeUp -- Powers up Your Success through Better Communication.</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,46 +25,187 @@
 
     <!-- W3schools CSS -->
     <!-- TODO: Investigate why this CSS has to be placed at last in order to make the page display normally. -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   </head>
-  <body>
+  <body id="page-top">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1949089508679497';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
 
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'icon/logo.png' %}" class="img-fluid" width="10%" height="auto"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'userprofile:profile-detail' user.id %}">{{ user.username }}</a>
+<nav class="navbar navbar-default navbar-fixed-top nav-color">
+  <div class="container-fluid">
+<a href="#" id="corner-ad2" data-toggle="modal" data-target="#demo" class="visible-xs zz">
+<img src="{% static 'icon/demo.png' %}" id="ff" title="Signup" width="200" height="200"/>
+</a>
+    <div class="navbar-header" id="ButtonForScroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-right: 130px;">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">
+        <img alt="Brand" src="{% static 'icon/logo-dark.png' %}" class="img-responsive" style="width:130px;margin-top: -5px;">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+
+      </ul>
+      <div class="container">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 60px;">
+          {% if user.is_authenticated %}
+              <li>
+                <a href="{% url 'userprofile:profile-detail' user.id %}">{{ user.username }}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-              </li>
-            {% endif %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Signup<span class="sr-only">(current)</span></a>
+            <li>
+              <a href="{% url 'logout' %}">Logout</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'company-signup' %}">Company Signup<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'coach:index' %}">Coaches</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'uploads:upload' %}">Upload</a>
-            </li>
-          </ul>
+          {% endif %}
+          <li><a href="#" data-toggle="modal" data-target="#pilot">Schedule a Pilot</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#contact">Contact us</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#share">Share</a></li>
+      </ul>
+      <!-- <div id="trydemo"></div> -->
+      <a href="#" id="corner-ad" data-toggle="modal" data-target="#demo" class="xx">
+        <img src="{% static 'icon/demo.png' %}" id="yy" title="Signup" width="200" height="200"/>
+      </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- contact -->
+  <div class="modal fade" id="contact" role="dialog" data-keyboard="false" data-backdrop="static" style="top:15%;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
+          <button type="button" class="close" data-dismiss="modal" style="color: #000;font-weight: bold;margin-top: -16px;font-size: 26px;">&times;</button>
+          <br>
+            <p class="text-center lead" style="font-weight:700;color:#34495c">Leave a message</p>
+            <form method="POST" action="{% url 'leave-message' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <center>
+            <input type="text" name="name" class="form-control" placeholder="Name" id="name" style="width:70%;" required>
+                </center>
+              </div>
+
+           <div class="form-group"><center>
+            <input type="email" name="email" class="form-control" id="email" style="width:70%;" placeholder="Email" required>
+            </center></div>
+
+           <div class="form-group"><center>
+             <textarea name="message" id="message" class="form-control" rows="5" style="width: 70%;" placeholder="Message" required></textarea>
+            </center></div>
+
+              <center>
+                <button type="submit" class="btn btn-primary" style="background-color: #34495c;border-color: #34495c;box-shadow: 0px 1px 2px 1px #362d2db3;">
+                <span style="font-weight:700;color:#fff;font-size: 20px;">Send</span>
+              </button>
+              </center>
+              </form> 
+              <br>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- share -->
+  <div class="modal fade" id="share" role="dialog" data-keyboard="false" data-backdrop="static" style="top:35%;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
+          <button type="button" class="close" data-dismiss="modal" style="color: #000;font-weight: bold;margin-top: -16px;font-size: 26px;">&times;</button>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-1">
+                <div class="fb-share-button" data-href="http://talkmeup.co" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalkmeup.co%2F&amp;src=sdkpreparse">Share</a></div>
+              </div>
+              <div class="col-sm-1">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Sign up for our upcoming demo! -->
+  <div class="modal fade" id="demo" role="dialog" data-keyboard="false" data-backdrop="static" style="top:20%;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
+          <button type="button" class="close" data-dismiss="modal" style="color: #000;font-weight: bold;margin-top: -16px;font-size: 26px;">&times;</button>
+          <br>
+            <p class="text-center lead" style="font-weight:700;color:#34495c">Sign up for our upcoming demo!</p>
+            <form method="POST" action="{% url 'personal-contact' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <center>
+                  <input type="email" name='email' class="form-control" id="email" style="width:70%;" placeholder="Your Email" required>
+                </center>
+              </div>
+              <center>
+              <button type="submit" class="btn btn-primary" style="background-color: #34495c;border-color: #34495c;box-shadow: 0px 1px 2px 1px #362d2db3;">
+                <span style="font-weight:700;color:#fff;font-size: 20px;">Sign Up</span>
+              </button>
+              </center>
+              <center>
+              <p class="lead" style="margin-top: 15px;font-weight: 700;color:#34495c;">Or Sign in with </p>
+              </center>
+              </form> 
+              <div class="text-center">
+                <a href="{% url 'social:begin' 'facebook' %}"><img style="width: 32px;" src="{% static 'icon/facebook.png' %}"></a>
+                <a href="{% url 'social:begin' 'twitter' %}"><img style="width: 32px;" src="{% static 'icon/twitter.png' %}"></a>
+                <!-- <a href="{% url 'social:begin' 'weibo' %}"><img style="width: 30px;" src="{% static 'icon/wechat.png' %}"></a> -->
+                <a href="{% url 'social:begin' 'google-oauth2' %}"><img style="width: 30px;" src="{% static 'icon/google.png' %}"></a>
+              </div>
+              <br>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Schedule a free Pilot for your company! -->
+  <div class="modal fade" id="pilot" role="dialog" data-keyboard="false" data-backdrop="static" style="top:25%;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-body" style="background-color:#EEC15E;padding: 6%;">
+          <button type="button" class="close" data-dismiss="modal" style="color: #000;font-weight: bold;margin-top: -16px;font-size: 26px;">&times;</button>
+          <br>
+            <p class="text-center lead" style="font-weight:700;color:#34495c">Schedule a free Pilot for your company!</p>
+            <form method="POST" action="{% url 'company-contact' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <center>
+            <input type="email" name="email" class="form-control" placeholder="Your Company Email" id="email" style="width:70%;" required>
+                </center>
+              </div>
+              <center>
+              <button type="submit" class="btn btn-primary" style="background-color: #34495c;border-color: #34495c;box-shadow: 0px 1px 2px 1px #362d2db3;">
+                <span style="font-weight:700;color:#fff;font-size: 20px;">Sign Up</span>
+              </button>
+              </center>
+              </form> 
+              <p class="text-center" style="color:#34495c;margin-top: 10px;">We will contact you within 5 business days</p>
+              <br>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
 
     <main role="main">
 
@@ -66,23 +214,21 @@
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-right"><a href="#" id="back_to_top_link">Back to top</a></p>
-        <p>&copy; 2017 TalkMeUp, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p class="pull-right" id="ButtonForScroll"><a href="#page-top" id="back_to_top_link">Back to top</a></p>
+        <p>&copy; 2017 TalkMeUp, Inc.</a></p>
       </footer>
 
     </main>
 
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("back_to_top_link").href = document.URL;
-      }
+    <script>
+
     </script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

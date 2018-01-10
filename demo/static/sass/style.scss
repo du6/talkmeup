@@ -1,0 +1,38 @@
+/*
+--------------------------------------------------
+ * Project : Html Bootstrap Compass Boilerplate
+ * Version: 1.0
+ * Author: @Farouk2u
+ * URI : github.com/farouk2u/html-bootstrap-compass-boilerplate
+ *============================================
+ */
+
+ /* ==|====================
+   VENDOR
+=========================== */
+@import "compass";
+//@import "vendor/bootstrap/bootstrap"; // Uncomment for production
+
+
+ /* ==|====================
+   PARTIALS
+=========================== */
+@import "partials/variables";
+@import "partials/base";
+@import "partials/modules";
+@import "partials/layout";
+@import "partials/helpers";
+
+
+/* ==|====================
+  Pages
+=========================== */
+@import "partials/pages/home";
+
+
+
+
+
+
+
+

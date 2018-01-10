@@ -1,0 +1,17 @@
+
+
+/* ==|=========================
+   BASE
+================================ */
+
+body {
+
+	font-family: $font_main;
+	overflow-x: hidden; 
+
+	* {
+		outline: none !important;
+		transition: .5s;
+	}
+
+}

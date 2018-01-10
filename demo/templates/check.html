@@ -1,0 +1,30 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+<div class="factors">
+    <div class="container rect1">
+        <div class="loader-wrap">
+            <div class="loader">
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+                <span class="loader-item"></span>
+            </div>
+        </div>
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">My charm stands me out among <span class="orange-text bold">XX%</span> of the
+                population! </h2>
+            <div class="check-btn">
+                <a class="btn" href="{% url "demo:factors" %}"> Check my Charm Factors</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

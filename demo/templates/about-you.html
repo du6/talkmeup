@@ -1,0 +1,58 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+<div class="charm-us">
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">You have <span class="orange-text">30</span> sec to charm us! </h2>
+            <div class="box-shurmus">
+                <p>
+                    Think of a <span class="fun-text bold">fun</span> experience, idea, something or someone that
+                    excites you and tell us about it!
+                </p>
+                <div class="counting-box">
+                    <div id="timer" class="timing">30</div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="btns">
+                    <button id="record" class="pull-left record">Record</button>
+                    <label class="btn-upload pull-right">
+                        <input id="file-upload" type="file" name="fileupload">
+                        <button class="upload">Upload</button>
+                    </label>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+<script>
+    $("#file-upload").change(function () {
+        var fileName = $("#file-upload").val();
+
+        if (fileName) {
+            setTimeout(function () {
+                location.href = '{% url "demo:check" %}';
+            }, 1000);
+        } else {
+            alert("no file selected");
+        }
+    });
+    $("#record").click(function () {
+        var counter = setInterval(timer, 1000);
+        $(this).unbind("click");
+    });
+
+    var count = 30;
+
+    function timer() {
+    count = count - 1;
+    if (count < 0) {clearInterval(counter);return;}
+        document.getElementById("timer").innerHTML = count; // watch for spelling
+        if (count == 0){location.href = '{% url "demo:check" %}';}
+    }
+</script>
+{% endblock %}

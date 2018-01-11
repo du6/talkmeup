@@ -23,6 +23,7 @@ from userprofile import views as userprofile_views
 from uploads import views as upload_views
 
 urlpatterns = [
+    url(r'^demo/', include('demo.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
@@ -31,10 +32,9 @@ urlpatterns = [
     url(r'^', include('userprofile.urls')),
     url(r'^coach/', include('coach.urls')),
     url(r'^signup$', userprofile_views.signup, name='signup'),
-    url(r'^company-contact$', userprofile_views.company_contact, name='company-contact'),
-    url(r'^personal-contact/', userprofile_views.personal_contact, name='personal-contact'),
-    url(r'^leave-message/', userprofile_views.leave_message, name='leave-message'),
+    url(r'^company-signup$', userprofile_views.company_signup, name='company-signup'),
     url(r'^uploads/', include('uploads.urls')),
+    url(r'^contact/', userprofile_views.contact, name='contact'),
 ]
 
 if settings.DEBUG is True:

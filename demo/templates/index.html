@@ -1,0 +1,20 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+<div class="home">
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">Ever wondered whether you are charismatic ?</h2>
+            <a class="btn btn-detect" href="{% url "demo:about" %}">Analyze My Charisma</a>
+            <div class="form-groupe">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="check"> <span class="label-text">I hereby confirm that I’m 13 years old or older. And my video content abides by the policy and laws of my country.</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

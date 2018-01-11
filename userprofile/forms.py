@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from userprofile.models import LeavedMessage, CompanyUserProfile, PersonalUserProfile
+from userprofile.models import ContactedUserProfile
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Input a valid email address.')
@@ -12,19 +12,17 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2', )
         
 
-class CompanySignUpForm(forms.ModelForm):
+class CompanySignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Required. Input a valid email address.')
+    companyName = forms.CharField(max_length=100)
+    message = forms.CharField(max_length=500)
+    
     class Meta:
-        model = CompanyUserProfile
-        fields = ('email', )
+        model = User
+        fields = ('companyName', 'username', 'email', 'password1', 'password2', 'message')
 
 
-class PersonalSignUpForm(forms.ModelForm):
+class ContactedUserForm(forms.ModelForm):
     class Meta:
-        model = PersonalUserProfile
-        fields = ('email', )
-
-
-class LeavedMessageForm(forms.ModelForm):
-    class Meta:
-        model = LeavedMessage
-        fields = ('name', 'email', 'message',)
+        model = ContactedUserProfile
+        fields = ('contactName', 'contactEmail', 'contactPhone', 'contactMessage', )

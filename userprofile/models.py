@@ -15,36 +15,28 @@ class UserProfile(models.Model):
         ordering = ('-createdOn',)
 
 
-class LeavedMessage(models.Model):
-    name = models.CharField(max_length=100, blank=True, default='')
-    email = models.CharField(max_length=100, blank=True, default='')
-    message = models.CharField(max_length=1000, blank=True, default='')
+class ContactedUserProfile(models.Model):
+    contactName = models.CharField(max_length=100, blank=True, default='')
+    contactEmail = models.CharField(max_length=100, blank=True, default='')
+    contactPhone = models.CharField(max_length=100, blank=True, default='')
+    contactMessage = models.CharField(max_length=1000, blank=True, default='')
     createdOn = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.contactName
 
     class Meta:
         ordering = ('-createdOn',)
         
 
 class CompanyUserProfile(models.Model):
-    email = models.CharField(max_length=100, blank=True, default='')
+    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    companyName = models.CharField(max_length=100, blank=True, default='')
+    message = models.CharField(max_length=100, blank=True, default='')
     createdOn = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.email
-
-    class Meta:
-        ordering = ('-createdOn',)
-
-
-class PersonalUserProfile(models.Model):
-    email = models.CharField(max_length=100, blank=True, default='')
-    createdOn = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.email
+        return self.companyName
 
     class Meta:
         ordering = ('-createdOn',)

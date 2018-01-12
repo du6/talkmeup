@@ -9,11 +9,18 @@
 
 	
 	.header {
-	   height: 70px;
 
+		height: 41px;
+		
+		.navbar .navbar-brand {
+		    padding: 0;
+		    margin-top: -3px;
+		    margin-left: -5px;
+		}
+	 	
 	 	.logo {
     		height: 90%;
-    		margin-top: 6px;
+    		margin-top: 5px;
 		}
 	}
 	
@@ -120,6 +127,7 @@
 				    border: 0;
     				border-radius: 5px;
 			    	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+			    	font-weight: 600;
 				}
     			
     			.upload {
@@ -129,8 +137,29 @@
     				border: 0;
     				border-radius: 5px;
 			    	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-				
+			    	font-weight: 600;
+
     			}
+
+    			.btn-upload {
+				    position: relative;
+				    overflow: hidden;
+				    display: inline-block;
+				}
+
+				.btn-upload input[type=file] {
+				    position: absolute;
+				    opacity: 0;
+				    z-index: 0;
+				    max-width: 100%;
+				    height: 100%;
+				    display: block;
+  			    	cursor: pointer;
+  			    	padding: 50px;
+
+				}
+				
+				
 
 		}
 
@@ -225,7 +254,11 @@
 .tips {
 
 	.content {
+		
 
+		h2.title {
+			font-size: 25px;
+		}
 		
 		.factors-container {
 			margin-top: 30px;
@@ -328,6 +361,8 @@
 			.share-copy {
 			     margin: 20px 0;
 				font-size: 20px;
+
+
 			}
 
 			.share-url {
@@ -342,6 +377,15 @@
 
 
 			}
+			
+
+				.btn-url {
+					
+					padding: 15px 20px;
+				    font-size: 20px;
+				    background: #83aaec;
+				    color: #0a2645;
+				}
 		}
 	}
 }

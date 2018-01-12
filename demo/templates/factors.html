@@ -1,54 +1,40 @@
 {% extends 'base_.html' %}
 
 {% block content %}
-<div class="factors">
-    <div class="loader-wrap">
-        <div class="loader">
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-        </div>
-    </div>
-    <div class="container rect1">
-        {% include "header.html" %}
-        <div class="text-center content">
-            <h2 class="title animated fadeInDown">
-                My <span class="charm-text bold">Charm</span> Factors
-            </h2>
-            <div class="factors-container">
-                <div class="row text-left animated fadeInLeft">
-                    <div class="col-sm-4">
-                        <h3>Factors 1</h3>
-                        <p>Description </p>
+    <div class="factors">
+        <div class="container rect1">
+            {% include "header.html" %}
+            <div class="text-center content">
+                <h2 class="title animated fadeInDown">
+                    <div>My <span class="charm-text bold"> Charisma </span> Factors</div>
+                </h2>
+                <div class="factors-container">
+                    <div class="row text-left animated fadeInLeft">
+                        <div class="col-sm-4">
+                            <h3>Factors 1</h3>
+                            <p>Description </p>
+                        </div>
+                        <div class="col-sm-8"></div>
                     </div>
-                    <div class="col-sm-8"></div>
-                </div>
-                <div class="row text-left animated fadeInLeft">
-                    <div class="col-sm-4">
-                        <h3>Factors 1</h3>
-                        <p>Description </p>
+                    <div class="row text-left animated fadeInLeft">
+                        <div class="col-sm-4">
+                            <h3>Factors 1</h3>
+                            <p>Description </p>
+                        </div>
+                        <div class="col-sm-8"></div>
                     </div>
-                    <div class="col-sm-8"></div>
-                </div>
-                <div class="row text-left animated fadeInLeft">
-                    <div class="col-sm-4">
-                        <h3>Factors 1</h3>
-                        <p>Description </p>
+                    <div class="row text-left animated fadeInLeft">
+                        <div class="col-sm-4">
+                            <h3>Factors 1</h3>
+                            <p>Description </p>
+                        </div>
+                        <div class="col-sm-8"></div>
                     </div>
-                    <div class="col-sm-8"></div>
-                </div>
-                <div class="text-center">
-                    <a class="btn btn-factors animated zommIn" href="{% url "demo:tips" %}">See how i can be more charismatic</a>
+                    <div class="text-center">
+                        <a class="btn btn-factors animated zommIn" href="{% url "demo:tips" %}"> Boost My Charisma</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

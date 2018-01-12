@@ -44,8 +44,8 @@
    	border-bottom: 2px solid #2FA496;
     width: 100%;
     margin: auto;
-    padding: 18px 0 0 50px;
-    height: 77px;
+    padding: 0 0 0 50px;
+    height: 45px;
 
 	.navbar {
     
@@ -53,13 +53,14 @@
 
     	.navbar-brand {
 	    	padding: 0;
+	    	height: 40px;
 		}
 
 	}
 
 	.logo {
         height: 100%;
-    	margin-top: 8px;
+		margin-top: 2px;
 	
 	}
 
@@ -88,7 +89,7 @@
 /* Responsive 
 ---------------------------------------*/
 
-@media screen and (max-width: 320px) { 
+@media screen and (max-width: 430px) { 
 
 	.factors .content .factors-container .btn-factors {
 		font-size: 15px !important;

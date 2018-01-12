@@ -1,11 +1,11 @@
-<div class="header">
-    <nav class="navbar">
-        <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">
+<nav class="navbar navbar-defaultr">
+    <div class="container-fluid">
+        <div class="navbar-header" id="ButtonForScroll">
+            <a class="navbar-brand" href="{% url "demo:index" %}">
                 {% load static %}
-                <img class="logo img-responsive" src="{% static 'images/logo.png' %}" alt="">
+                <img class="logo img-responsive" src="{% static 'images/logo.png' %}" alt="Logo">
             </a>
         </div>
-    </nav>
-    <div class="clearfix"></div>
-</div>
+    </div>
+</nav>
+<div class="clearfix"></div>

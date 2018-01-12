@@ -18,3 +18,13 @@
     </div>
 </div>
 {% endblock %}
+{% block javascript %}
+<script>
+    $('.btn-detect').on('click', function (event) {
+        if (!$('input[name="check"]').is(':checked')) {
+            alert('Please accept the legal terms');
+            event.preventDefault();
+        }
+    })
+</script>
+{% endblock %}

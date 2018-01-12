@@ -45,5 +45,14 @@
         var counter = setInterval(timer, 1000);
         $(this).unbind("click");
     });
+
+    var count = 30;
+
+    function timer() {
+    count = count - 1;
+    if (count < 0) {clearInterval(counter);return;}
+        document.getElementById("timer").innerHTML = count; // watch for spelling
+        if (count == 0){location.href = '{% url "demo:check" %}';}
+    }
 </script>
 {% endblock %}

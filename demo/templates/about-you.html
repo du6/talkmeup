@@ -11,12 +11,11 @@
                     Think of a <span class="fun-text bold">fun</span> experience, idea, something or someone that
                     excites you and tell us about it!
                 </p>
-                <div class="counting-box">
-                    <div id="timer" class="timing">30</div>
-                </div>
+                <video autoplay></video>
                 <div class="clearfix"></div>
                 <div class="btns">
                     <button id="record" class="record">Record</button>
+                    <span id="timer" class="timing">30</span>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -25,30 +24,13 @@
 </div>
 {% endblock %}
 {% block javascript %}
-<script>
-    $("#file-upload").change(function () {
-        var fileName = $("#file-upload").val();
 
-        if (fileName) {
-            setTimeout(function () {
-                location.href = '{% url "demo:check" %}';
-            }, 1000);
-        } else {
-            alert("no file selected");
-        }
-    });
-    $("#record").click(function () {
-        var counter = setInterval(timer, 1000);
-        $(this).unbind("click");
-    });
-
-    var count = 30;
-
-    function timer() {
-    count = count - 1;
-    if (count < 0) {clearInterval(counter);return;}
-        document.getElementById("timer").innerHTML = count; // watch for spelling
-        if (count == 0){location.href = '{% url "demo:check" %}';}
-    }
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous">
 </script>
+{% load static %}
+{% csrf_token %}
+<script src="{% static "js/video_capture.js" %}"></script>
 {% endblock %}

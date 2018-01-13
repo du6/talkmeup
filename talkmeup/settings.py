@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     '.us-west-1.compute.amazonaws.com',
     '54.153.116.23',
     '.talkmeup.co',
+    # load balancer
+    '172.31.5.217',
 ]
 
 
@@ -196,6 +198,3 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'JWNlg0liuk3mQ7aQ'
 
 SOCIAL_AUTH_WEIBO_KEY = '22021550'
 SOCIAL_AUTH_WEIBO_SECRET = '22a7031fb1815a158a24d0793bf04ba7'
-
-SECURE_SSL_REDIREC = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

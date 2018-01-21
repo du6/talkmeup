@@ -10,27 +10,13 @@
                 <div>based on your performance.</div>
             </h2>
             <div class="factors-container">
-                <div class="row text-left">
-                    <div class="col-sm-4">
-                        <h3>Factors B1</h3>
-                        <p>Description </p>
+                {% for negative in negatives %}
+                <div class="row text-left animated fadeInLeft">
+                    <div>
+                        <h3>{{ negative }}</h3>
                     </div>
-                    <div class="col-sm-8"></div>
                 </div>
-                <div class="row text-left">
-                    <div class="col-sm-4">
-                        <h3>Factors B2</h3>
-                        <p>Description </p>
-                    </div>
-                    <div class="col-sm-8"></div>
-                </div>
-                <div class="row text-left">
-                    <div class="col-sm-4">
-                        <h3>Factors B3</h3>
-                        <p>Description </p>
-                    </div>
-                    <div class="col-sm-8"></div>
-                </div>
+                {% endfor %}
                 <div class="btns">
                     <a class="btn btn-tips pull-left" href="{% url "signup" %}">
                         Sign up

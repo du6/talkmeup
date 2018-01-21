@@ -63,13 +63,13 @@ navigator.mediaDevices.getUserMedia({
     });
     $.ajax({
       type: 'POST',
-      url: '/uploads/',
+      url: '/uploads/demo',
       data: fd,
       processData: false,
       contentType: false
     }).done(function(data) {
       console.log(data)
-      location.href = 'check';
+      location.href = 'check/' + csrftoken;
     })
   }
 }).catch(function(err){

@@ -50,6 +50,12 @@ def get_top_negatives(performance_key):
         return negatives[0:3]
     return negatives
 
+def get_percentage(performance_key):
+    performance = Performance.objects.get(key=performance_key)
+    percentage = performance.smile + performance.emotion + performance.filler_words +
+        performance.eye_contact + performance.nervousness + performance.pause + performance.clearness
+    return int(percentage * 100.0 / 31.0);
+
 def index(request):
     return render(request, 'index.html')
 
@@ -57,7 +63,8 @@ def about(request):
     return render(request, 'about-you.html')
 
 def check(request, performance_key):
-    return render(request, 'check.html', {'performance_key': performance_key})
+    percentage = get_percentage(performance_key)
+    return render(request, 'check.html', {'performance_key': performance_key, 'percentage': percentage})
 
 def contact(request):
     return render(request, 'contact.html')

@@ -52,8 +52,9 @@ def get_top_negatives(performance_key):
 
 def get_percentage(performance_key):
     performance = Performance.objects.get(key=performance_key)
-    percentage = performance.smile + performance.emotion + performance.filler_words +
-        performance.eye_contact + performance.nervousness + performance.pause + performance.clearness
+    percentage = performance.smile + performance.emotion + performance.filler_words \
+                 + performance.eye_contact + performance.nervousness + performance.pause \
+                 + performance.clearness
     return int(percentage * 100.0 / 31.0);
 
 def index(request):

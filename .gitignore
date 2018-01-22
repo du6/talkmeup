@@ -1,6 +1,7 @@
 # django
 db.sqlite3
 migrations/
+**/.DS_Store
 
 # Python
 __pycache__/

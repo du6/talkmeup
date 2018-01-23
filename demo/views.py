@@ -12,13 +12,21 @@ def get_top_positives(performance_key):
     positives = []
     performance = Performance.objects.get(key=performance_key)
     if (performance.smile > 3):
-        positives.append("I like your smile!")
+        positives.append("You can break ice with your smile!")
     if (performance.speech_rate == 3 or performance.speech_rate == 4):
-        positives.append("Greate speech pace!")
+        positives.append("You speak at an effective pace!")
     if (performance.emotion > 3):
-        positives.append("You are enthusiastic!")
+        positives.append("You can engage the audience with your enthusiasm!")
+    if (performance.filler_words > 3):
+        positives.append("No, or very few, fillers!")
+    if (performance.eye_contact == 1):
+        positives.append("You engage the audience with appropriate eye contact!")
+    if (performance.nervousness > 3):
+        positives.append("You are confident and calm and have a reassuring impact on your audience!")
+    if (performance.pause > 3):
+        positives.append("You speak with a wonderful rhythm that is comfortable to listen to!")
     if (performance.clearness > 3):
-        positives.append("Awesome spoken English!")
+        positives.append("You can clearly deliver your thoughts with masterful articulation.")
     if (len(positives) > 3):
         shuffle(positives)
         return positives[0:3]
@@ -28,23 +36,23 @@ def get_top_negatives(performance_key):
     negatives = []
     performance = Performance.objects.get(key=performance_key)
     if (performance.smile < 3):
-        negatives.append("You may have more smiles!")
+        negatives.append("When you smile at your audience, they will smile back.  You will feel more comfortable and the audience will perceive you as confident. So let’s wear that warm smile on your face!")
     if (performance.speech_rate < 3):
-        negatives.append("You speak too slow!")
+        negatives.append("You speak too slow. Try adjust your speech rate to 120-150 words per minute!")
     if (performance.speech_rate > 4):
-        negatives.append("You speak too fast!")
+        negatives.append("You speak too fast. Try adjust your speech rate to 120-150 words per minute!")
     if (performance.emotion < 3):
-        negatives.append("Be more enthusiastic!")
+        negatives.append("Try varying your emotional tone a bit and you’ll connect with your audience in the deepest way possible!")
     if (performance.filler_words < 3):
-        negatives.append("You have too many filler words!")
+        negatives.append("Get comfortable with brief pauses and you will have fewer fillers!")
     if (performance.eye_contact == 0):
-        negatives.append("Talking with eye contact is important!")
+        negatives.append("Here’s a trick to make good eye contact: briefly look INTO the eyes, instead of look AT.")
     if (performance.nervousness < 3):
-        negatives.append("Don't be nervous!")
+        negatives.append("Remember you’re the owner of your thoughts! And you are more charming when you’re calm!  Slight changes to your body when you are about to speak are normal and helpful when channeled into your delivery.")
     if (performance.pause < 3):
-        negatives.append("You paused too much!")
+        negatives.append("Use pauses and vocal stress to emphasize key points – But not too much.")
     if (performance.clearness < 3):
-        negatives.append("Practice more on spoken English!")
+        negatives.append("Make sure you pronounce words clearly at a moderate pace.")
     if (len(negatives) > 3):
         shuffle(negatives)
         return negatives[0:3]

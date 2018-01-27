@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     '.us-west-1.compute.amazonaws.com',
     '54.153.116.23',
     '.talkmeup.co',
+    # load balancer
+    '172.31.5.217',
 ]
 
 
@@ -167,7 +169,7 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',

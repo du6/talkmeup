@@ -2,199 +2,207 @@
 
 {% block content %}
 
-<div class="container">
+<div class="LandingPage">
+<section id="header">
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-2 home_image">
       {% load static %}
-      <img src="{% static 'icon/logo-dark.png' %}" class="img-fluid" width="100%" height="auto">
+      <center>
+      <img src="{% static 'icon/logo-withname.png' %}" class="img-responsive" width="60%" height="auto" style="margin-top:10px">
+      </center>
       </div>
-    <div class="col-sm-2"></div>
   </div>
   <br>
+  <br>
+
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Tiy2LONr050?autoplay=1&loop=1&playlist=Tiy2LONr050&mute=1"></iframe>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_kaglYLpOq0?autoplay=1&loop=1&playlist=_kaglYLpOq0&mute=1"></iframe>
       </div>
     </div>
     <div class="col-sm-3"></div>
   </div>
   <br>
+  <br>
+
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-      <h3>On-demand, effective and personalized coaching on communication skills at 1/100th the cost of the world's best professional coaches.</h3>
+      <p style="font-size: 24px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1.5px;" class="text-center" >On-demand, effective and personalized coaching on communication skills at 1/100th the cost of the world's best professional coaches.</p>
     </div>
     <div class="col-sm-2"></div>
   </div>
+</section>
 </div>
+<br>
+<br>
+<br>
 
-<hr class="featurette-divider">
+<div class="WhyTalkMeUp">
+  <section id="why-talkmeup">
+    <div class="col-sm-10 col-sm-offset-1">
+	    <h1 class="text-center" style="font-size: 48px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 6px; margin-top:80px;">
+        Why TalkMeUp
+      </h1>
+      <br>
+      <br>
+      <center>
+        <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Accessible</h2>
+            <img src="{% static 'icon/accessible.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">TalkMeUp is at your service <p style="font-size: 22px; color:#30A596; font-family:'Open Sans' script=latin rev=1; font-style:normal; letter-spacing: 1px;">24/7.</p>
 
-  <div class="container topics" >
+          </div>
 
-    <div>
-      <h1>Professors from top business schools offer 1:1 soft skills training on various topics! Exclusively available at TalkMeUp!</h1>
-
-    <p><a class="btn btn-primary" href="{% url 'coach:index' %}" role="button">See our coaches</a></p>
-    </div>
-
-<hr>
-
-    <div class="w3-row-padding w3-center">
-        <div class="w3-quarter">
-        <div class="topic">
-            <h2>Elevator pitch</h2>
-            <p>
-                <img src="../static/categoryImg/professor1.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">
-            <span class="glyphicons glyphicons-thumbs-up"></span>
-            Express Interest</a>
-            </div>
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Effective</h2>
+            <img src="{% static 'icon/effective.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#30A596; font-family:'Open Sans' script=latin rev=1; font-style:normal; letter-spacing: 1px;">Personalized<p style="font-size: 22px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">coaching that drives progress. </p>
+          </div>
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Affordable</h2>
+            <img src="{% static 'icon/affordablelight.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">Stating at <p style="font-size: 22px; color:#30A596; font-family:'Open Sans' script=latin rev=1; font-style:normal; letter-spacing: 1px;">$0 per month.</p>
+          </div>
+    </center>
         </div>
-    </div>
+</section>
+</div>
+<br>
 
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Rock the stage</h2>
-            <p>
-                <img src="../static/categoryImg/professor2.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
+<div class="PersonalTrain">
+  <section id="presentation-interview">
+    <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 48px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 4px; margin-top:80px;">
+        For Consumers
+      </h1>
+      <br>
+      <br>
+      <br>
+          <center>
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Presentation</h2>
+            <img src="{% static 'icon/presentationdark.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">A good presentation satisfies your audience and helps you gain buy-in.</p>
+          </div>
+
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Job Interview</h2>
+            <img src="{% static 'icon/interviewdark.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">Delivering your value properly gets you in the door.</p>
+          </div>
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Leadership</h2>
+            <img src="{% static 'icon/leadership.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">Show your team that you are the one to trust and follow.</p>
+          </div>
+          </center>
         </div>
-    </div>
+</section>
+</div>
+<br>
+<br>
+<br>
 
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Charm my date</h2>
-            <p>
-                <img src="../static/categoryImg/professor3.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
+<div class="CompanyTrain" id="pilot">
+  <section id="talkmeup-about">
+      <div class="col-sm-10 col-sm-offset-1" style="margin-top: 0px">
+      <h1 class="text-center" style="font-size: 48px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 6px; margin-top:80px;">
+        For Enterprises
+      </h1>
+      <br>
+      <br>
+      <br>
+      </div>
+      <div class="col-sm-10 col-sm-offset-2" style="margin-top: 0px">
+          <center>
+          <div class="col-sm-4">
+            <h2 style="font-size: 32px; color:0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Employee</h2>
+            <img src="{% static 'icon/employeelight.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">TalkMeUp equips every employee with a smart coach that is always available on his/her mobile device.</p>
+          </div>
+
+          <div class="col-sm-4 col-sm-offset-2">
+            <h2 style="font-size: 32px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 2px; margin-buttom:40px;">Company</h2>
+            <img src="{% static 'icon/company.png' %}" class="img-responsive" style="width: 70%;">
+            <br>
+            <br>
+            <p style="font-size: 22px; color:#0A2645; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">TalkMeUp can be easily tailored for enterprises. It provides analytical support to make employee development adaptable, measurable and manageable.</p>
+          </div>
+          </center>
         </div>
-    </div>
+</section>
+</div>
+<br>
+<br>
+<br>
+<br>
 
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Break ice</h2>
-<!--            <h2>Break ice, easy peasy</h2>-->
-            <p>
-                <img src="../static/categoryImg/professor4.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
+
+<section id="testmonial">
+  <div class="row" style="background-color:#30A596;margin-right: auto;margin-left: auto;margin-top: 100px;">
+    <br>
+    <br>
+    <div class="col-md-3" style="visibility:hidden">
+      <center>
+        <br><br><br><br>
+        <a data-slide="prev" href="#quote-carousel" style="color:grey;font-size:30px;"><i class="fa fa-chevron-left"></i></a>
+      </center>
+    </div>
+    <div class="col-md-6">
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <div class="carousel-inner" style="font-size: 20px;">
+          <div class="item active">
+            <center>
+              <p style="font-size: 22px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:italic; letter-spacing: 1px;">“We piloted TalkMeUp in my Management Presentations class, improving class participation by 5X. Further, students who used TalkMeUp are maintaining their presentation skills at a higher level after the course when compared with those who relied on less robust forms of feedback."</p>
+              <p style="font-size: 18px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">-- Prof. Ron Placone</p>
+                <center>
+              <p style="font-size: 18px; color:#ffffff; font-family:'Open Sans' script=latin rev=1; font-weight:lighter; font-style:normal; letter-spacing: 1px;">Faculty Lead for the Accelerate Leadership Center at the Tepper School of Business, Carnegie Mellon University</p>
+            </center>
+              <br>
+              </center>
+              </div>
+              <div class="carousel-inner" style="font-size: 16px;">
+
             </div>
+          </div>
+          <br>
+          <br>
         </div>
+      </div>
     </div>
-
+    <div class="col-md-3" style="visibility:hidden">
+      <center>
+        <br><br><br><br>
+        <a data-slide="next" href="#quote-carousel" style="color:grey;font-size:30px;"><i class="fa fa-chevron-right"></i></a>
+        </center>
+    </div>
   </div>
-
-    <hr>
-<!-- ----------------------------------- -->
-
-    <div class="w3-row-padding w3-center">
-        <div class="w3-quarter">
-        <div class="topic">
-           <h2>Bridge the cultural gap for me</h2>
-            <p>
-                <img src="../static/categoryImg/professor5.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Ace the job interviews</h2>
-<!--            <h2>Ace the job interviews</h2>-->
-            <p>
-                <img src="../static/categoryImg/professor6.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Win the negotiations</h2>
-            <p>
-                <img src="../static/categoryImg/professor7.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-quarter">
-        <div class="topic">
-            <h2>Lead with wisdom and charm</h2>
-            <p>
-                <img src="../static/categoryImg/professor8.jpg" style="width:100%">
-            </p>
-            <div class="w3-container">
-            <a class="btn btn-primary" href="#" role="button">Express Interest</a>
-            </div>
-        </div>
-    </div>
-
-  </div>
-
-</div><!-- /.container -->
-
-<hr class="featurette-divider">
-
-<hr class="contact-form-divider">
-
-<form method="post" action="{% url 'contact' %}" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-  {% csrf_token %}
-
-  <h2 class="w3-center">Contact Us</h2>
-  
-  <div class="w3-row w3-section">
-    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-    <div class="w3-rest">
-      <input class="w3-input w3-border" name="contactName" type="text" placeholder="Name">
-    </div>
-  </div>
-
-  <div class="w3-row w3-section">
-    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
-    <div class="w3-rest">
-      <input class="w3-input w3-border" name="contactEmail" type="text" placeholder="Email">
-    </div>
-  </div>
-
-  <div class="w3-row w3-section">
-    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
-    <div class="w3-rest">
-      <input class="w3-input w3-border" name="contactPhone" type="text" placeholder="Phone">
-    </div>
-  </div>
-
-  <div class="w3-row w3-section">
-    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-    <div class="w3-rest">
-      <input class="w3-input w3-border" name="contactMessage" type="text" placeholder="Message">
-    </div>
-  </div>
-
-  <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Send</button>
-</form>
-
-<hr class="contact-form-divider">
+</section>
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}

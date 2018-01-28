@@ -1,0 +1,26 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+    <div class="factors">
+        <div class="container rect1">
+            {% include "header.html" %}
+            <div class="text-center content">
+                <h2 class="title animated fadeInDown">
+                    <div>My <span class="charm-text bold"> Charisma </span> Factors</div>
+                </h2>
+                <div class="factors-container">
+                    {% for positive in positives %}
+                    <div class="row text-left animated fadeInLeft">
+                        <div>
+                            <h3>{{ positive }}</h3>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="text-center">
+                        <a class="btn btn-factors animated zommIn" href="{% url "demo:tips" performance_key %}"> Boost My Charisma</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

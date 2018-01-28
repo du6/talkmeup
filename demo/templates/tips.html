@@ -1,0 +1,38 @@
+{% extends 'base_.html' %}
+
+{% block content %}
+<div class="tips">
+    <div class="container rect1">
+        {% include "header.html" %}
+        <div class="text-center content">
+            <h2 class="title">
+                <div><span class="fun-text">TalkMeUp</span> has tips for you</div>
+                <div>based on your performance.</div>
+            </h2>
+            <div class="factors-container">
+                {% for negative in negatives %}
+                <div class="row text-left animated fadeInLeft">
+                    <div>
+                        <h3>{{ negative }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="btns">
+                    <a class="btn btn-tips pull-left" href="{% url "signup" %}">
+                        Sign up
+                        <div class="sub-text">
+                            <span>For more from </span>
+                            <div> TalkMeUp!</div>
+                        </div>
+                    </a>
+                    <a class="btn btn-tips pull-right" href="{% url "demo:share" %}">
+                        Share
+                        <div class="sub-text">TalkMeUp with friends</div>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

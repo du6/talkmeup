@@ -2,25 +2,11 @@
 
 {% block content %}
 <div class="home">
-    <div class="loader-wrap">
-        <div class="loader">
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-            <span class="loader-item"></span>
-        </div>
-    </div>
     <div class="container rect1">
         {% include "header.html" %}
         <div class="text-center content">
-            <h2 class="title">Ever wondered whether you are charismatich ?</h2>
-            <a class="btn btn-detect" href="{% url 'demo:about' %}">Detect my charisma</a>
+            <h2 class="title">Ever wondered whether you are charismatic ?</h2>
+            <a class="btn btn-detect" href="{% url "demo:about" %}">Analyze My Charisma</a>
             <div class="form-groupe">
                 <div class="form-check">
                     <label>
@@ -31,4 +17,14 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block javascript %}
+<script>
+    $('.btn-detect').on('click', function (event) {
+        if (!$('input[name="check"]').is(':checked')) {
+            alert('Please accept the legal terms');
+            event.preventDefault();
+        }
+    })
+</script>
 {% endblock %}

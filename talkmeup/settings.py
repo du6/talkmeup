@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     '.us-west-1.compute.amazonaws.com',
     '54.153.116.23',
     '.talkmeup.co',
+    # load balancer
+    '172.31.5.217',
 ]
 
 
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_user_agents',
     'guardian',
     'rest_framework',
     'social_django',
@@ -62,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'talkmeup.urls'
@@ -167,7 +171,7 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
@@ -196,3 +200,10 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'JWNlg0liuk3mQ7aQ'
 
 SOCIAL_AUTH_WEIBO_KEY = '22021550'
 SOCIAL_AUTH_WEIBO_SECRET = '22a7031fb1815a158a24d0793bf04ba7'
+
+
+# List of mobile browsers User-Agent strings
+
+browsers_User_Agent = [
+
+]

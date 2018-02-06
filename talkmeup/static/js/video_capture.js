@@ -1,8 +1,8 @@
 /* global MediaRecorder $ */
 /*eslint no-console: 0*/
 
-const record = document.getElementById('record')
-const stop = document.getElementById('stop')
+const record = document.getElementById('record');
+const stop = document.getElementById('stop');
 const csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
 $("#record").hide(0);
 $("#timer").hide(0);
@@ -11,7 +11,7 @@ if (!navigator.mediaDevices){
   alert('getUserMedia support required to use this page')
 }
 
-const chunks = []
+const chunks = [];
 let onDataAvailable = (e) => {
   chunks.push(e.data)
 }
@@ -74,5 +74,5 @@ navigator.mediaDevices.getUserMedia({
   }
 }).catch(function(err){
   console.log('error', err)
-})
+});
 

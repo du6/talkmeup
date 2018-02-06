@@ -34,7 +34,6 @@ ALLOWED_HOSTS = [
     '.talkmeup.co',
     # load balancer
     '172.31.5.217',
-    '192.168.1.6',
 ]
 
 

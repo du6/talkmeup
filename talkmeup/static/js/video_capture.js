@@ -1,68 +1,78 @@
-var cameraStream;
+/* global MediaRecorder $ */
+/*eslint no-console: 0*/
 
-function hasGetUserMedia() {
-  return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
-            navigator.mozGetUserMedia || navigator.msGetUserMedia);
+const record = document.getElementById('record');
+const stop = document.getElementById('stop');
+const csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+$("#record").hide(0);
+$("#timer").hide(0);
+
+if (!navigator.mediaDevices){
+  alert('getUserMedia support required to use this page')
 }
 
+const chunks = [];
+let onDataAvailable = (e) => {
+  chunks.push(e.data)
+}
 
-if (hasGetUserMedia()) {
-    var constraints = {audio: false, video: {width: {ideal: 480}, height: {ideal: 360}}};
-    var video = document.querySelector("video");
+// Not showing vendor prefixes.
+navigator.mediaDevices.getUserMedia({
+  audio: true,
+  video: {
+    width: { ideal: 480 },
+    height: { ideal: 360 }
+  }
+}).then((mediaStream) => {
+  const recorder = new MediaRecorder(mediaStream)
+  recorder.ondataavailable = onDataAvailable
+  const video = document.querySelector('video')
+  const url = window.URL.createObjectURL(mediaStream)
+  video.src = url
+  $("#record").show(0);
+  $("#record").click(() => {
+    $(this).unbind("click");
+    document.getElementById("record").innerHTML = 'Recording...';
+    $("#timer").show(0);
+    recorder.start();
     var count = 30;
-    const record = document.getElementById('record');
-    const stop = document.getElementById('stop');
-    const csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+    var counter = setInterval(() => {
+      count = count - 1;
+      document.getElementById("timer").innerHTML = count; // watch for spelling
+      if (count <= 0) {
+        recorder.stop();
+        clearInterval(counter);
+      }
+    }, 1000);
+  });
 
-    function successCallback(stream) {
-      window.stream = stream; // stream available to console
-        if (window.URL) {
-            video.src = window.URL.createObjectURL(stream);
-        } else {
-            video.src = stream;
+  recorder.onstop = (e) => {
+    console.log('e', e)
+    console.log('chunks', chunks)
+    document.getElementById("record").innerHTML = 'Uploading...';
+    const bigVideoBlob = new Blob(chunks, { 'type' : 'video/webm; codecs=webm' })
+    const filename = csrftoken + '.webm';
+    const file = new File([bigVideoBlob], filename);
+    let fd = new FormData()
+    fd.append('description', filename)
+    fd.append('document', file)
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
         }
-
-        //save it for later
-        cameraStream = stream;
-
-        video.play();
-        var counter = setInterval(function () {
-            count = count - 1;
-            document.getElementById("timer").innerHTML = count; // watch for spelling
-            if (count == 0) {
-                stopWebCam();
-                clearInterval(counter);
-            }
-        }, 1000);
-    }
-
-    function errorCallback(error) {
-      console.log("navigator.getUserMedia error: ", error);
-    }
-
-    $("#record").on('click', function () {
-        document.getElementById("record").innerHTML = 'Recording...';
-        $("#timer").show(0);
-
-        navigator.mediaDevices
-            .getUserMedia(constraints)
-            .then(successCallback)
-            .catch(errorCallback);
     });
+    $.ajax({
+      type: 'POST',
+      url: '/uploads/demo',
+      data: fd,
+      processData: false,
+      contentType: false
+    }).done(function(data) {
+      console.log(data)
+      location.href = 'check/' + csrftoken;
+    })
+  }
+}).catch(function(err){
+  console.log('error', err)
+});
 
-
-    function stopWebCam() {
-        if (video) {
-            video.pause();
-            video.src = '';
-            video.load();
-        }
-
-        if (cameraStream && cameraStream.stop) {
-            cameraStream.stop();
-        }
-        stream = null;
-    }
-} else {
-    alert('getUserMedia support required to use this page');
-}

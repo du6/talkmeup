@@ -12,7 +12,7 @@
                     excites you and tell us about it!
                 </p>
                 {% if request.user_agent.is_pc and request.user_agent.os.family != 'iOS' %}
-                <video autoplay></video>
+                <video autoplay muted></video>
                 <div class="clearfix"></div>
                 <div class="btns">
                     <button id="record" class="record" onclick="$('#record').trigger('click');">Record</button>

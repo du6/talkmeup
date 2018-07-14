@@ -29,8 +29,8 @@ ALLOWED_HOSTS = [
     'talkmeup-env.pdej7m249m.us-west-1.elasticbeanstalk.com',
     '127.0.0.1',
     'localhost',
-    '.us-west-1.compute.amazonaws.com',
-    '54.153.116.23',
+    '.compute-1.amazonaws.com',
+    '54.91.214.176',
     '.talkmeup.co',
     # load balancer
     '172.31.5.217',
@@ -51,10 +51,7 @@ INSTALLED_APPS = [
     'guardian',
     'rest_framework',
     'social_django',
-    'coach.apps.CoachConfig',
-    'userprofile.apps.UserprofileConfig',
-    'uploads.apps.UploadsConfig',
-    'demo',
+    'ai',
 ]
 
 MIDDLEWARE = [
@@ -94,7 +91,6 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "talkmeup/static"),
     os.path.join(BASE_DIR, "demo/static")
                     ]
 
@@ -181,7 +177,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_user',
     'social_core.pipeline.user.get_username',
     'social_core.pipeline.user.create_user',
-    'userprofile.views.save_profile_for_social_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',

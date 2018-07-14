@@ -19,23 +19,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from userprofile import views as userprofile_views
-from uploads import views as upload_views
-
 urlpatterns = [
-    url(r'^demo/', include('demo.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-    url(r'^$', userprofile_views.home, name='home'),
     url(r'^', include('django.contrib.auth.urls')),
-    url(r'^', include('userprofile.urls')),
-    url(r'^coach/', include('coach.urls')),
-    url(r'^signup$', userprofile_views.signup, name='signup'),
-    url(r'^company-contact$', userprofile_views.company_contact, name='company-contact'),
-    url(r'^personal-contact/', userprofile_views.personal_contact, name='personal-contact'),
-    url(r'^leave-message/', userprofile_views.leave_message, name='leave-message'),
-    url(r'^uploads/', include('uploads.urls')),
+    url(r'^ai/', include('ai.urls')),
 ]
 
 if settings.DEBUG is True:

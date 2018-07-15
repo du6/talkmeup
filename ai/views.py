@@ -36,6 +36,8 @@ def upload(request):
     filename = download_link.split("/")[-1]
     fullpath = os.getcwd() + '/media/videos/' + filename
     performance_key = filename.split(".")[0]
+    if Performance.objects.filter(key=performance_key).exists():
+        return HttpResponseServerError(html("File %s already exists!" % performance_key))
     open(fullpath, 'wb').write(r.content)
     result = ML_grade(fullpath, len(fullpath), 0)
     performance = Performance(

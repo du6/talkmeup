@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     '.compute-1.amazonaws.com',
     '54.91.214.176',
     '.talkmeup.co',
+    '18.208.88.8',
+    '172.31.95.192',
     # load balancer
     '172.31.5.217',
     '192.168.1.10',

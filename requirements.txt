@@ -1,4 +1,4 @@
-ansible==2.4.0.0
+ansible==4.2.0
 asn1crypto==0.23.0
 astroid==1.5.3
 awacs==0.7.1
